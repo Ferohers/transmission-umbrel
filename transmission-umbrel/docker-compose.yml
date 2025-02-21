@@ -10,6 +10,8 @@ services:
       - RPC_AUTHENTICATION_REQUIRED=false
       - HOST_WHITELIST_ENABLED=true
       - HOST_WHITELIST=127.0.0.*, 172.17.0.*, 10.21.0.*, 10.20.30.*
+      - RPC_WHITELIST_ENABLED=
+      - RPC_WHITELIST=10.21.0.3
     volumes:
       - ${APP_DATA_DIR}/data/config:/config
       - ${UMBREL_ROOT}/data/storage/2tb/downloads:/downloads
