@@ -2,7 +2,7 @@ manifestVersion: 1
 id: transmission-umbrel
 category: networking
 name: Transmission
-version: "4.0.6"
+version: "4.0.7"
 tagline: A fast, easy and free BitTorrent client
 icon: https://raw.githubusercontent.com/Ferohers/transmission-umbrel/refs/heads/main/transmission.svg
 description: >-
