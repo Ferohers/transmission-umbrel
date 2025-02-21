@@ -6,7 +6,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TRANSMISSION_WEB_HOME=/transmissionic/
+      - TRANSMISSION_WEB_HOME=/trguing/
       - USER=altan
       - PASS=beta12
       - RPC_AUTHENTICATION_REQUIRED=false
