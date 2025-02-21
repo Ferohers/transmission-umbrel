@@ -18,7 +18,7 @@ services:
       - ${UMBREL_ROOT}/data/storage/downloads:/downloads
     ports:
       - 51413:51413
-      - 9091:9091
+#     - 9091:9091
       - 51413:51413/udp
     restart: unless-stopped
 
