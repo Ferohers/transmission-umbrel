@@ -1,18 +1,18 @@
 version: '2.1'
 services:
   transmission:
-    image: ddsderek/transmission:latest
-    container_name: transmission_server_1
+    image: lscr.io/linuxserver/transmission:latest
+    container_name: transmission
     environment:
       - PUID=1000
       - PGID=1000
-      - TRANSMISSION_WEB_HOME=/trguing/
-#      - USER=altan
-#      - PASS=beta12
-      - RPC_AUTHENTICATION_REQUIRED=true
-      - RPC_USERNAME=altan
-      - RPC_PASSWORD=beta12
-      - HOST_WHITELIST=n100.local, localhost
+      - TZ=Etc/UTC
+      - TRANSMISSION_WEB_HOME= #optional
+      - USER= #optional
+      - PASS= #optional
+      - WHITELIST= #optional
+      - PEERPORT= #optional
+      - HOST_WHITELIST= #optional
     volumes:
       - ${APP_DATA_DIR}/data/config:/config
       - ${UMBREL_ROOT}/data/storage/2tb/downloads:/downloads
