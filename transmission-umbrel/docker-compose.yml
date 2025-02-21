@@ -7,8 +7,8 @@ services:
       - PUID=1000
       - PGID=1000
       - TRANSMISSION_WEB_HOME=/trguing/
-      - USER=altan
-      - PASS=beta12
+#      - USER=altan
+#      - PASS=beta12
 #      - RPC_AUTHENTICATION_REQUIRED=false
       - RPC_USERNAME=altan
       - RPC_PASSWORD=beta12
