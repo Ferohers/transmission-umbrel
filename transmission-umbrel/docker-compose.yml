@@ -9,9 +9,10 @@ services:
       - TRANSMISSION_WEB_HOME=/transmissionic/
       - RPC_AUTHENTICATION_REQUIRED=false
       - HOST_WHITELIST_ENABLED=true
+      - TRANSMISSION_RPC_HOST_WHITELIST=transmission
       - HOST_WHITELIST=127.0.0.*, 172.17.0.*, 10.21.0.*, 10.20.30.*
       - RPC_WHITELIST_ENABLED=true
-      - RPC_WHITELIST=10.21.0.3
+      - RPC_WHITELIST=127.0.0.1, 10.21.0.3, 192.168.1.100, 172.17.0.1
     volumes:
       - ${APP_DATA_DIR}/data/config:/config
       - ${UMBREL_ROOT}/data/storage/2tb/downloads:/downloads
