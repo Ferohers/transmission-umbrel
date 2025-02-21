@@ -6,12 +6,12 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
+      - TRANSMISSION_WEB_HOME=/transmissionic/
       - USER=altan
       - PASS=beta12
       - RPC_AUTHENTICATION_REQUIRED=false
       - HOST_WHITELIST_ENABLED=true
       - HOST_WHITELIST=127.0.0.*, 172.17.0.*, 10.21.0.*, 10.20.30.*
-      - TRANSMISSION_WEB_HOME=/transmissionic/
     volumes:
       - ${APP_DATA_DIR}/data/config:/config
       - ${UMBREL_ROOT}/data/storage/2tb/downloads:/downloads
