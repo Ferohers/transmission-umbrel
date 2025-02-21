@@ -9,11 +9,10 @@ services:
       - TRANSMISSION_WEB_HOME=/trguing/
 #      - USER=altan
 #      - PASS=beta12
-#      - RPC_AUTHENTICATION_REQUIRED=false
+      - RPC_AUTHENTICATION_REQUIRED=true
       - RPC_USERNAME=altan
       - RPC_PASSWORD=beta12
       - HOST_WHITELIST=n100.local, localhost
-      - WHITELIST=127.0.0.*, 172.17.0.*, 10.21.0.*, 10.20.30.*, 192.168.*.*
     volumes:
       - ${APP_DATA_DIR}/data/config:/config
       - ${UMBREL_ROOT}/data/storage/2tb/downloads:/downloads
@@ -25,9 +24,9 @@ services:
     restart: unless-stopped
 
     
-  widget-server:
-    image: getumbrel/umbrel-transmission-widget-server:v1.0.0@sha256:0ee30f1eecbf6f4f3f62e3f6d5c1626bd31d15ace7e97cacff5fc091836650cf
-    environment:
-      - TRANSMISSION_URL=http://transmission_server_1
-      - TRANSMISSION_PORT=9091
-    restart: on-failure
+#  widget-server:
+#    image: getumbrel/umbrel-transmission-widget-server:v1.0.0@sha256:0ee30f1eecbf6f4f3f62e3f6d5c1626bd31d15ace7e97cacff5fc091836650cf
+#    environment:
+#      - TRANSMISSION_URL=http://transmission_server_1
+#      - TRANSMISSION_PORT=9091
+#    restart: on-failure
