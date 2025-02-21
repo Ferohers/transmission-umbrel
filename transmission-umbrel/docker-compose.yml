@@ -1,30 +1,22 @@
-version: "3.7"
-
+version: "2.1"
 services:
-  app_proxy:
-    environment:
-      APP_HOST: transmission_server_1
-      APP_PORT: 9091
-
-  server:
+  transmission:
     image: ddsderek/transmission:latest
+    container_name: transmission
     environment:
       - PUID=1000
       - PGID=1000
+      - UMASK=022
+      - TZ=Asia/Shanghai
       - USER=altan
       - PASS=beta12
+      - TRANSMISSION_WEB_HOME=/transmissionic/
     volumes:
       - ${APP_DATA_DIR}/data/config:/config
       - ${UMBREL_ROOT}/data/storage/downloads:/downloads
+      - ${UMBREL_ROOT}/data/storage/downloads/watch/folder:/watch
     ports:
+      - 9091:9091
       - 51413:51413
-#     - 9091:9091
       - 51413:51413/udp
     restart: unless-stopped
-
-  widget-server:
-    image: getumbrel/umbrel-transmission-widget-server:v1.0.0@sha256:0ee30f1eecbf6f4f3f62e3f6d5c1626bd31d15ace7e97cacff5fc091836650cf
-    environment:
-      - TRANSMISSION_URL=http://transmission_server_1
-      - TRANSMISSION_PORT=9091
-    restart: on-failure
