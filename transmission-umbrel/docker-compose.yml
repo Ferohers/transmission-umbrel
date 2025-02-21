@@ -1,18 +1,17 @@
 version: '2.1'
 services:
   transmission:
-    image: lscr.io/linuxserver/transmission:latest
-    container_name: transmission
+    image: ddsderek/transmission:latest
+    container_name: transmission_server_1
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Etc/UTC
       - TRANSMISSION_WEB_HOME=/trguing/
-      - USER= #optional
-      - PASS= #optional
-      - WHITELIST= #optional
-      - PEERPORT= #optional
-      - HOST_WHITELIST= #optional
+#      - USER=altan
+#      - PASS=beta12
+      - RPC_AUTHENTICATION_REQUIRED=false
+      - HOST_WHITELIST_ENABLED=false
+      - RPC_PASSWORD={afd510e2e7b377fc65289a26b41f7e331cc4d24dnrQVwL8U
     volumes:
       - ${APP_DATA_DIR}/data/config:/config
       - ${UMBREL_ROOT}/data/storage/2tb/downloads:/downloads
@@ -23,10 +22,9 @@ services:
       - 51413:51413/udp
     restart: unless-stopped
 
-    
-#  widget-server:
-#    image: getumbrel/umbrel-transmission-widget-server:v1.0.0@sha256:0ee30f1eecbf6f4f3f62e3f6d5c1626bd31d15ace7e97cacff5fc091836650cf
-#    environment:
-#      - TRANSMISSION_URL=http://transmission_server_1
-#      - TRANSMISSION_PORT=9091
-#    restart: on-failure
+  widget-server:
+    image: getumbrel/umbrel-transmission-widget-server:v1.0.0@sha256:0ee30f1eecbf6f4f3f62e3f6d5c1626bd31d15ace7e97cacff5fc091836650cf
+    environment:
+      - TRANSMISSION_URL=http://transmission_server_1
+      - TRANSMISSION_PORT=9091
+    restart: on-failure
