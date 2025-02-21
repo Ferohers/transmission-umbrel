@@ -12,7 +12,7 @@ services:
 #      - RPC_AUTHENTICATION_REQUIRED=false
       - RPC_USERNAME=altan
       - RPC_PASSWORD=beta12
-      - HOST_WHITELIST=n100.local
+      - HOST_WHITELIST=n100.local, localhost
       - WHITELIST=127.0.0.*, 172.17.0.*, 10.21.0.*, 10.20.30.*, 192.168.*.*
     volumes:
       - ${APP_DATA_DIR}/data/config:/config
