@@ -7,8 +7,8 @@ services:
       - PUID=1000
       - PGID=1000
       - TRANSMISSION_WEB_HOME=/trguing/
-      - USER=altan
-      - PASS=beta12
+#      - USER=altan
+#      - PASS=beta12
       - RPC_AUTHENTICATION_REQUIRED=false
       - HOST_WHITELIST_ENABLED=false
       - RPC_PASSWORD=beta12
@@ -22,9 +22,9 @@ services:
       - 51413:51413/udp
     restart: unless-stopped
 
-#  widget-server:
-#    image: getumbrel/umbrel-transmission-widget-server:v1.0.0@sha256:0ee30f1eecbf6f4f3f62e3f6d5c1626bd31d15ace7e97cacff5fc091836650cf
-#    environment:
-#      - TRANSMISSION_URL=http://transmission_server_1
-#      - TRANSMISSION_PORT=9091
-#    restart: on-failure
+  widget-server:
+    image: getumbrel/umbrel-transmission-widget-server:v1.0.0@sha256:0ee30f1eecbf6f4f3f62e3f6d5c1626bd31d15ace7e97cacff5fc091836650cf
+    environment:
+      - TRANSMISSION_URL=http://transmission_server_1
+      - TRANSMISSION_PORT=9091
+    restart: on-failure
