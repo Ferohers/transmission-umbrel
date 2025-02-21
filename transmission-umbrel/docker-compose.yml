@@ -9,7 +9,7 @@ services:
       - TRANSMISSION_WEB_HOME=/trguing/
       - USER=altan
       - PASS=beta12
-      - RPC_AUTHENTICATION_REQUIRED=false
+      - RPC_AUTHENTICATION_REQUIRED=true
       - HOST_WHITELIST_ENABLED=true
       - HOST_WHITELIST=127.0.0.*, 172.17.0.*, 10.21.0.*, 10.20.30.*, 192.168.*.*
     volumes:
