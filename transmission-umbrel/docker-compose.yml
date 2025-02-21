@@ -22,9 +22,9 @@ services:
       - 51413:51413/udp
     restart: unless-stopped
 
-  widget-server:
-    image: getumbrel/umbrel-transmission-widget-server:v1.0.0@sha256:0ee30f1eecbf6f4f3f62e3f6d5c1626bd31d15ace7e97cacff5fc091836650cf
-    environment:
-      - TRANSMISSION_URL=http://transmission_server_1
-      - TRANSMISSION_PORT=9091
-    restart: on-failure
+#  widget-server:
+#    image: getumbrel/umbrel-transmission-widget-server:v1.0.0@sha256:0ee30f1eecbf6f4f3f62e3f6d5c1626bd31d15ace7e97cacff5fc091836650cf
+#    environment:
+#      - TRANSMISSION_URL=http://transmission_server_1
+#      - TRANSMISSION_PORT=9091
+#    restart: on-failure
