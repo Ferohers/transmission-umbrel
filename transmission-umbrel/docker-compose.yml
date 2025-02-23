@@ -18,7 +18,6 @@ services:
       - WHITELIST=127.0.0.1,192.168.10.*,10.21.0.*,192.168.1.*, 10.20.*.*
       - HOST_WHITELIST=n100.local,sonarr,radarr
       - RPC_AUTHENTICATION_REQUIRED=true
-#      - RPC_PORT=9092
       - RPC_USERNAME=altan
       - RPC_PASSWORD=mypassword
     volumes:
@@ -27,7 +26,6 @@ services:
     ports:
       - '51413:51413'
       - 51413:51413/udp
-#      - '9092:9092'
     restart: on-failure
     container_name: transmission_server_1
     
