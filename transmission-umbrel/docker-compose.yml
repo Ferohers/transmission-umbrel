@@ -3,7 +3,7 @@ services:
   app_proxy:
     environment:
       APP_HOST: transmission_server_1
-      APP_PORT: 9091
+      APP_PORT: 9092
     container_name: transmission_app_proxy_1
   server:
     image: >-
@@ -20,7 +20,7 @@ services:
       - RPC_AUTHENTICATION_REQUIRED=true
       - RPC_PORT=9092
       - RPC_USERNAME=altan
-      - RPC_PASSWORD=beta12
+      - RPC_PASSWORD=mypassword
     volumes:
       - ${APP_DATA_DIR}/data/config:/config
       - ${UMBREL_ROOT}/data/storage/downloads:/downloads
@@ -35,6 +35,6 @@ services:
       getumbrel/umbrel-transmission-widget-server:v1.0.0@sha256:0ee30f1eecbf6f4f3f62e3f6d5c1626bd31d15>
     environment:
       - TRANSMISSION_URL=http://transmission_server_1
-      - TRANSMISSION_PORT=9091
+      - TRANSMISSION_PORT=9092
     restart: on-failure
     container_name: transmission_widget-server_1      
