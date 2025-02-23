@@ -4,7 +4,7 @@ services:
   app_proxy:
     environment:
       APP_HOST: transmission_server_1
-      APP_PORT: 9092
+      APP_PORT: 9091
 
   server:
     image: linuxserver/transmission:4.0.6@sha256:17b10956b1711c989140023cbd8a71d3683f6bbb1b5d1ee0c8cdac45b028fffc
@@ -27,7 +27,7 @@ services:
     ports:
       - 51413:51413
       - 51413:51413/udp
-      - '9092:9092'
+  #    - '9092:9092'
     restart: on-failure
 
 #  widget-server:
