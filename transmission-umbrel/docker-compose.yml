@@ -6,8 +6,7 @@ services:
       APP_PORT: 9091
     container_name: transmission_app_proxy_1
   server:
-    image: >-
-      linuxserver/transmission:4.0.6@sha256:17b10956b1711c989140023cbd8a71d3683f6bbb1b5d1ee0c8cdac45b0>
+    image: linuxserver/transmission:4.0.6@sha256:17b10956b1711c989140023cbd8a71d3683f6bbb1b5d1ee0c8cdac45b028fffc
     environment:
       - PUID=1000
       - PGID=1000
