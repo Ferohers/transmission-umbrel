@@ -13,29 +13,20 @@ services:
       - PGID=1000
       - USER=altan
       - PASS=beta12
-      - RPC_HOST_WHITELIST_ENABLED=true
+      - RPC_HOST_WHITELIST-ENABLED=true
       - RPC_WHITELIST_ENABLED=true
       - WHITELIST=127.0.0.1,192.168.10.*,10.21.0.*,192.168.1.*, 10.20.*.*
-#      - HOST_WHITELIST=n100.local,sonarr,radarr
-#      - RPC_AUTHENTICATION_REQUIRED=true
-#      - RPC_USERNAME=altan
-#      - RPC_PASSWORD=mypassword
+      - HOST_WHITELIST=n100.local,sonarr,radarr
+      - RPC_AUTHENTICATION_REQUIRED=true
+      - RPC_PORT=9092
+      - RPC_USERNAME=altan
+      - RPC_PASSWORD=mypassword
     volumes:
       - ${APP_DATA_DIR}/data/config:/config
       - ${UMBREL_ROOT}/data/storage/downloads:/downloads
     ports:
       - '51413:51413'
       - 51413:51413/udp
+      - '9092:9092'
     restart: on-failure
     container_name: transmission_server_1
-    
-#  widget-server:
-#    image: >-
-#      getumbrel/umbrel-transmission-widget-server:v1.0.0@sha256:0ee30f1eecbf6f4f3f62e3f6d5c1626bd31d15>
-#    environment:
-#      - TRANSMISSION_URL=http://transmission_server_1
-#    restart: on-failure
-#    container_name: transmission_widget-server_1
-
-
-
