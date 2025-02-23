@@ -1,13 +1,13 @@
-version: "3.7"
-
+version: '3.7'
 services:
   app_proxy:
     environment:
       APP_HOST: transmission_server_1
-      APP_PORT: 9091
-
+      APP_PORT: 9092
+    container_name: transmission_app_proxy_1
   server:
-    image: linuxserver/transmission:4.0.6@sha256:17b10956b1711c989140023cbd8a71d3683f6bbb1b5d1ee0c8cdac45b028fffc
+    image: >-
+      linuxserver/transmission:4.0.6@sha256:17b10956b1711c989140023cbd8a71d3683f6bbb1b5d1ee0c8cdac45b0>
     environment:
       - PUID=1000
       - PGID=1000
@@ -18,21 +18,15 @@ services:
       - WHITELIST=127.0.0.1,192.168.10.*,10.21.0.*,192.168.1.*, 10.20.*.*
       - HOST_WHITELIST=n100.local,sonarr,radarr
       - RPC_AUTHENTICATION_REQUIRED=true
-#      - RPC_PORT=9092
+      - RPC_PORT=9092
       - RPC_USERNAME=altan
-      - RPC_PASSWORD=mypas
+      - RPC_PASSWORD=mypassword
     volumes:
       - ${APP_DATA_DIR}/data/config:/config
       - ${UMBREL_ROOT}/data/storage/downloads:/downloads
     ports:
-      - 51413:51413
+      - '51413:51413'
       - 51413:51413/udp
-#      - '9092:9092'
+      - '9092:9092'
     restart: on-failure
-
-#  widget-server:
-#    image: getumbrel/umbrel-transmission-widget-server:v1.0.0@sha256:0ee30f1eecbf6f4f3f62e3f6d5c1626bd31d15ace7e97cacff5fc091836650cf
-#    environment:
-#      - TRANSMISSION_URL=http://transmission_server_1
-#      - TRANSMISSION_PORT=9091
-#    restart: on-failure
+    container_name: transmission_server_1
