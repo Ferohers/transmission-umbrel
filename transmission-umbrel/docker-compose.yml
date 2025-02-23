@@ -27,7 +27,7 @@ services:
     ports:
       - '51413:51413'
       - 51413:51413/udp
-      - '9092:9092'
+#      - '9092:9092'
     restart: on-failure
     container_name: transmission_server_1
     
