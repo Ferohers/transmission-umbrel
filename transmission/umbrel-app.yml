@@ -1,5 +1,5 @@
 manifestVersion: 1
-id: transmission-umbrel
+id: transmission
 category: networking
 name: Transmission
 version: "4.0.8"
@@ -26,7 +26,7 @@ repo: https://github.com/transmission/transmission
 support: https://github.com/transmission/transmission/issues
 port: 9091
 gallery:
-  - https://raw.githubusercontent.com/Ferohers/transmission/refs/heads/main/commands.png
+  - https://raw.githubusercontent.com/Ferohers/transmission-umbrel/refs/heads/main/commands.png
   - https://raw.githubusercontent.com/Ferohers/umbrel-com/refs/heads/master/commands.png
   - https://raw.githubusercontent.com/Ferohers/umbrel-com/refs/heads/master/commands.png
 path: "/transmission/web/"
