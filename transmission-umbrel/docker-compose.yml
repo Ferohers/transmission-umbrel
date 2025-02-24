@@ -12,7 +12,7 @@ services:
       - PGID=1000
       - USER=altan
       - PASS=mypass
-      - RPC_HOST_WHITELIST-ENABLED=true
+      - RPC_HOST_WHITELIST_ENABLED=true
       - RPC_WHITELIST_ENABLED=true
       - WHITELIST=127.0.0.1,192.168.10.*,10.21.0.*,192.168.1.*, 10.20.*.*
       - HOST_WHITELIST=n100.local,sonarr,radarr
