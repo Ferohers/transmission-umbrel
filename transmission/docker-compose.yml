@@ -19,7 +19,7 @@ services:
       - RPC_AUTHENTICATION_REQUIRED=true
       - RPC_PORT=9091
       - RPC_USERNAME=altan
-      - RPC_PASSWORD=mypassword
+      - RPC_PASSWORD=damnthingdontwork
     volumes:
       - ${APP_DATA_DIR}/data/config:/config
       - ${UMBREL_ROOT}/data/storage/downloads:/downloads
@@ -29,3 +29,12 @@ services:
       - '9092:9091'
     restart: on-failure
     container_name: transmission_server_1
+
+ widget-server:
+    image: >-
+      getumbrel/umbrel-transmission-widget-server:v1.0.0@sha256:0ee30f1eecbf6f4>
+    environment:
+      - TRANSMISSION_URL=http://altan:mypass@transmission_server_1
+      - TRANSMISSION_PORT=9091
+    restart: on-failure
+    container_name: transmission_widget-server_1
